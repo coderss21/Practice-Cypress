@@ -13,10 +13,33 @@ describe('My First Test', function() {
      //visible is jquery function which will help to view only visible items
      cy.get('.product:visible').should('have.length',4);
      
+     //We can give alias by using 'as', when we give @ it means aliasing
+     cy.get('.products').as('productlocator')
+
      //Parent child chaining, find will look only inside the particular given scope not whole page
-     cy.get(".products").find(".product").should('have.length',4);
+     cy.get("@productlocator").find(".product").should('have.length',4);
 
      //click on add to cart for 2nd product
-     cy.get('.products').find(".product").eq(2).contains('ADD TO CART').click()
+     cy.get('@productlocator').find(".product").eq(2).contains('ADD TO CART').click()
+     //console.log('sf')
+
+      //iterate over each element
+      cy.get('@productlocator').find('.product').each(($el,index,$list)=> {
+
+        const textVeg = $el.find('h4.product-name').text()
+        if(textVeg.includes('Carrot')){
+           cy.wrap($el.find('button')).click();
+        }
+    })
+    //apply assertion with actual and expected value
+    cy.get('.brand').should('have.text','GREENKART')
+
+    //if we assign it to some value then we need to resolve this 
+    //this is to print text in logs
+    cy.get('.brand').then(function (logoelement) 
+    {
+        cy.log(logoelement.text())
+        
+    })
     })
   })

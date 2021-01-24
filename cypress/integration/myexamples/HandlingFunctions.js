@@ -45,7 +45,8 @@ describe('My fourth test case', function() {
      * ----------Handling Radio Buttons-------
      */
     cy.get("input[value='radio2']").check().should('be.checked').and('have.value','radio2');
-    cy.get("input[value='radio2']").uncheck().should('not.be.checked');
+    //We can't uncheck the radio buttons
+    //cy.get("input[value='radio2']").uncheck().should('not.be.checked');
 
     
 

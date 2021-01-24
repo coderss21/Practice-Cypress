@@ -9,6 +9,7 @@ describe('My third test case', function() {
      cy.visit("https://www.amazon.in/");
      cy.get('#twotabsearchtextbox').type("maggi").click();
      cy.get("#nav-search-submit-button").click();
+     
 
     })
   })
