@@ -9,6 +9,6 @@
   "author": "shubhra singhal",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^5.2.0"
+    "cypress": "^5.6.0"
   }
 }
