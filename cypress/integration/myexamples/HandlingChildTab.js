@@ -1,7 +1,7 @@
 // <reference types="Cypress" />
 
 describe('My fourth test case', function() {
-    it('Complete Tests ', function() {
+    it('Complete Tests ',{ tags: '@smoke' }, function() {
       //test steps for that test will go inside it
       //visit is used to visit any URL
      cy.visit("https://rahulshettyacademy.com/AutomationPractice/");
@@ -18,4 +18,8 @@ describe('My fourth test case', function() {
      cy.url().should('include','AutomationPractice');
 
     })
+    it('Test1',()=>{
+    
+    });
+    it('Test 2', () => {});
 })
