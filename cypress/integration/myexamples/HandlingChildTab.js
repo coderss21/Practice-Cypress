@@ -1,5 +1,5 @@
-// <reference types="Cypress" />
-
+/// <reference types="Cypress" />
+require('cypress-grep')()
 describe('My fourth test case', function() {
     it('Complete Tests ',{ tags: '@smoke' }, function() {
       //test steps for that test will go inside it
